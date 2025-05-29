@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "3a6f50ee-8509-4b83-b5c3-806345ba9f36",
+		"name": "policy endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPolicyById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/policies/pol_002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies",
+						"pol_002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPoliciesByCustomer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/policies?customerName=Bob Johnson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies"
+					],
+					"query": [
+						{
+							"key": "customerName",
+							"value": "Bob Johnson"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPolicy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "secret123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"productId\": \"prod_travel\",\r\n    \"customerName\": \"Julia Blackgergerg\",\r\n    \"startDate\": \"2025-07-01\",\r\n    \"endDate\": \"2025-07-20\",\r\n    \"premium\": 95,\r\n    \"status\": \"active\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/policies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePolicyById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "secret123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"productId\": \"prod_mfwefwefotor\",\r\n    \"customerName\": \"Alice Smithaaaaaaasssss\",\r\n    \"startDate\": \"2025-01-01\",\r\n    \"endDate\": \"2026-01-01\",\r\n    \"premium\": 33320,\r\n    \"status\": \"active\",\r\n    \"createdAt\": \"2025-01-01T12:00:00Z\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/policies/pol_005",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies",
+						"pol_005"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePolicyById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "secret123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/policies/pol_001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies",
+						"pol_001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
